@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="pl">
+    <head>
+        {% include "./head.html" %}
+    </head>
+
+    <body>
+        {% include "./menu.html" %}
+
+         <div class="search" style="clear: both;">
+            <p>Filtruj</p>
+            <form action="" method="POST">
+                <select id="filter_by_type" name="filter_by_type">
+                    <option value="none" selected="selected">---------</option>
+                    <option value="deep_space">Głęboki kosmos</option>
+                    <option value="solar">Układ słoneczny</option>
+                    <option value="moon">Księżyce</option>
+                </select>
+                <p>Sortuj</p>
+                <select id="sort_by" name="sort_by">
+                    <option value="none" selected="selected">---------</option>
+                    <option value="magnitude_desc">Jasność malejąco</option>
+                    <option value="magnitude_asc">Jasność rosnąco</option>
+                </select>
+
+                {% csrf_token %}
+                <button type="submit">Wyślij</button>
+
+                <br><br>
+            </form>
+        </div>
+
+         <div id="content">
+             <div id="inside_content">
+            {% if is_post == False %}
+            {% if data %}
+                <ul>
+                    <legend><h1>Obiekty głębokiego kosmosu</h1></legend>
+                    {% for interstellar_object in data.0 %}
+                        {% if interstellar_object.get_class == 'InterstellarObject' %}
+                            <li>
+                            id: {{interstellar_object.id}}</br>
+                            Nazwa: {{interstellar_object.name}}</br>
+                            Typ: {{interstellar_object.type}}</br>
+                            Gwiazdozbiór: {{interstellar_object.constellation}}</br>
+                            Odległość: {{interstellar_object.distance}}</br>
+                            Jasność: {{interstellar_object.apparent_magnitude}}</br>
+                            Rozmiar: {{interstellar_object.size}}</br>
+                            Katalog Messiera: {{interstellar_object.messier_catalogue}}</br>
+                                {% if interstellar_object.description %}
+                                Opis: {{interstellar_object.description}}</br>
+                                {% endif %}
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{interstellar_object.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{interstellar_object.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="interstellar" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    <legend><h1>Obiekty układu słonecznego</h1></legend>
+                    {% for solar_system_object in data.1 %}
+                        {% if solar_system_object.get_class == 'SolarSystemObject' %}
+                            <li>
+                            id: {{solar_system_object.id}}</br>
+                            Nazwa: {{solar_system_object.name}}</br>
+                            Promień (km): {{solar_system_object.radius}}</br>
+                            Aphelium (au): {{solar_system_object.aphelion}}</br>
+                            Peryhelium (au): {{solar_system_object.perihelion}}</br>
+                            Okres orbitalny (d): {{solar_system_object.orbital_period}}</br>
+                            Prędkość orbitalna (km/s): {{solar_system_object.orbital_speed}}</br>
+                            Okres obrotu (h): {{solar_system_object.rotation_period}}</br>
+                            Jasnośc (mag): {{solar_system_object.apparent_magnitude}}</br>
+                            Naturalne satelity: {{solar_system_object.natural_satellites}}</br>
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{solar_system_object.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{solar_system_object.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="solar" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    <legend><h1>Księżyce</h1></legend>
+                    {% for moon_object in data.2 %}
+                        {% if moon_object.get_class == 'MoonObject' %}
+                            <li>
+                            id: {{moon_object.id}}</br>
+                            Nazwa: {{moon_object.name}}</br>
+                            Średnica (km): {{moon_object.diameter}}</br>
+                            Apocentrum (au): {{moon_object.apoapsis}}</br>
+                            Perycentrum (au): {{moon_object.perihelion}}</br>
+                            Okres orbitalny (d): {{moon_object.orbital_period}}</br>
+                            Prędkość orbitalna (km/s): {{moon_object.orbital_speed}}</br>
+                            Okres obrotu (h): {{moon_object.rotation_period}}</br>
+                            Jasnośc (mag): {{moon_object.apparent_magnitude}}</br>
+                            Planeta: {{moon_object.satellite_of.name}}</br>
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{moon_object.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{moon_object.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="moon" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No objects are available.</p>
+            {% endif %}
+            {% endif %}
+
+
+             {% if is_post == True %}
+                {% if all_objects == False %}
+                    {% if type == 'interstellar' %}
+                        <ul>
+                        <legend><h1>Obiekty głębokiego kosmosu</h1></legend>
+                        {% for interstellar_object in data %}
+                            {% if interstellar_object.get_class == 'InterstellarObject' %}
+                                <li>
+                                id: {{interstellar_object.id}}</br>
+                                Nazwa: {{interstellar_object.name}}</br>
+                                Typ: {{interstellar_object.type}}</br>
+                                Gwiazdozbiór: {{interstellar_object.constellation}}</br>
+                                Odległość: {{interstellar_object.distance}}</br>
+                                Jasność: {{interstellar_object.apparent_magnitude}}</br>
+                                Rozmiar: {{interstellar_object.size}}</br>
+                                Katalog Messiera: {{interstellar_object.messier_catalogue}}</br>
+                                    {% if interstellar_object.description %}
+                                    Opis: {{interstellar_object.description}}</br>
+                                    {% endif %}
+                                <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                    <input type="checkbox" id="favourite" name="favourite" value="{{interstellar_object.id}}">
+                                    <label for="favourite">Dodaj do ulubionych</label><br>
+                                    <input type="checkbox" id="plan" name="plan" value="{{interstellar_object.id}}">
+                                    <label for="plan">Dodaj do planu obserwacji</label><br>
+                                    <input type="checkbox" id="type" name="type" value="interstellar" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                    {% csrf_token %}
+                                    <button type="submit">Wyślij</button>
+                                </form>
+                                </li>
+                                </br></br>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if type == 'solar' %}
+                        <ul>
+                        <legend><h1>Obiekty układu słonecznego</h1></legend>
+                            {% for solar_system_object in data %}
+                                {% if solar_system_object.get_class == 'SolarSystemObject' %}
+                                    <li>
+                                    id: {{solar_system_object.id}}</br>
+                                    Nazwa: {{solar_system_object.name}}</br>
+                                    Promień (km): {{solar_system_object.radius}}</br>
+                                    Aphelium (au): {{solar_system_object.aphelion}}</br>
+                                    Peryhelium (au): {{solar_system_object.perihelion}}</br>
+                                    Okres orbitalny (d): {{solar_system_object.orbital_period}}</br>
+                                    Prędkość orbitalna (km/s): {{solar_system_object.orbital_speed}}</br>
+                                    Okres obrotu (h): {{solar_system_object.rotation_period}}</br>
+                                    Jasnośc (mag): {{solar_system_object.apparent_magnitude}}</br>
+                                    Naturalne satelity: {{solar_system_object.natural_satellites}}</br>
+                                    <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                        <input type="checkbox" id="favourite" name="favourite" value="{{solar_system_object.id}}">
+                                        <label for="favourite">Dodaj do ulubionych</label><br>
+                                        <input type="checkbox" id="plan" name="plan" value="{{solar_system_object.id}}">
+                                        <label for="plan">Dodaj do planu obserwacji</label><br>
+                                        <input type="checkbox" id="type" name="type" value="solar" style="opacity:0; position:absolute; left:9999px;">
+                                        {% csrf_token %}
+                                        <button type="submit">Wyślij</button>
+                                    </form>
+                                    </li>
+                                    </br></br>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if type == 'moon' %}
+                        <ul>
+                        <legend><h1>Księżyce</h1></legend>
+                            {% for moon_object in data %}
+                                {% if moon_object.get_class == 'MoonObject' %}
+                                    <li>
+                                    id: {{moon_object.id}}</br>
+                                    Nazwa: {{moon_object.name}}</br>
+                                    Średnica (km): {{moon_object.diameter}}</br>
+                                    Apocentrum (au): {{moon_object.apoapsis}}</br>
+                                    Perycentrum (au): {{moon_object.periapsis}}</br>
+                                    Okres orbitalny (d): {{moon_object.orbital_period}}</br>
+                                    Prędkość orbitalna (km/s): {{moon_object.orbital_speed}}</br>
+                                    Okres obrotu (h): {{moon_object.rotation_period}}</br>
+                                    Jasnośc (mag): {{moon_object.apparent_magnitude}}</br>
+                                    <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                        <input type="checkbox" id="favourite" name="favourite" value="{{moon_object.id}}">
+                                        <label for="favourite">Dodaj do ulubionych</label><br>
+                                        <input type="checkbox" id="plan" name="plan" value="{{moon_object.id}}">
+                                        <label for="plan">Dodaj do planu obserwacji</label><br>
+                                        <input type="checkbox" id="type" name="type" value="moon" style="opacity:0; position:absolute; left:9999px;">
+                                        {% csrf_token %}
+                                        <button type="submit">Wyślij</button>
+                                    </form>
+                                    </li>
+                                    </br></br>
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                    {% endif %}
+                {% endif %}
+                {% if all_objects == True %}
+                    {% for object in data %}
+                        {% if object.get_class == 'InterstellarObject' %}
+                            <li>
+                            id: {{object.id}}</br>
+                            Nazwa: {{object.name}}</br>
+                            Typ: {{object.type}}</br>
+                            Gwiazdozbiór: {{object.constellation}}</br>
+                            Odległość: {{object.distance}}</br>
+                            Jasność: {{object.apparent_magnitude}}</br>
+                            Rozmiar: {{object.size}}</br>
+                            Katalog Messiera: {{object.messier_catalogue}}</br>
+                                {% if interstellar_object.description %}
+                                Opis: {{interstellar_object.description}}</br>
+                                {% endif %}
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{object.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{object.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="interstellar" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% elif object.get_class == 'SolarSystemObject' %}
+                            <li>
+                            id: {{object.id}}</br>
+                            Nazwa: {{object.name}}</br>
+                            Promień (km): {{object.radius}}</br>
+                            Aphelium (au): {{object.aphelion}}</br>
+                            Peryhelium (au): {{object.perihelion}}</br>
+                            Okres orbitalny (d): {{object.orbital_period}}</br>
+                            Prędkość orbitalna (km/s): {{object.orbital_speed}}</br>
+                            Okres obrotu (h): {{object.rotation_period}}</br>
+                            Jasnośc (mag): {{object.apparent_magnitude}}</br>
+                            Naturalne satelity: {{object.natural_satellites}}</br>
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{object.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{object.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="solar" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% elif object.get_class == 'MoonObject' %}
+                            <li>
+                            id: {{object.id}}</br>
+                            Nazwa: {{object.name}}</br>
+                            Średnica (km): {{object.diameter}}</br>
+                            Apocentrum (au): {{object.apoapsis}}</br>
+                            Perycentrum (au): {{object.periapsis}}</br>
+                            Okres orbitalny (d): {{object.orbital_period}}</br>
+                            Prędkość orbitalna (km/s): {{object.orbital_speed}}</br>
+                            Okres obrotu (h): {{object.rotation_period}}</br>
+                            Jasnośc (mag): {{object.apparent_magnitude}}</br>
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{object.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{object.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="moon" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+             {% endif %}
+            </div>
+         </div>
+    </body>
+</html>

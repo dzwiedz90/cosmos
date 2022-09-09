@@ -1,0 +1,20 @@
+<div id="menu">
+    <div class="menu" style="float: left;"><a href="/cosmos/">Cosmos</a></div>
+    <div class="menu" style="float: left;"><a href="/cosmos/units/">Jednostki</a></div>
+    <div class="menu" style="float: left;"><a href="/cosmos/interstellar/">Głęboki kosmos</a></div>
+    <div class="menu" style="float: left;"><a href="/cosmos/solar/">Układ Słoneczny</a></div>
+    <div class="menu" style="float: left;"><a href="/cosmos/moons/">Księżyce</a></div>
+    <div class="menu" style="float: left;"><a href="/cosmos/copyright/">Copyright</a></div>
+
+    <div id="user" style="float: left;">
+    {% block content %}
+        <div class="menu" style="float: left;"><a href="/cosmos/favourites/">Ulubione</a></div>
+        <div class="menu" style="float: left;"><a href="/cosmos/plan/">Plan obserwacji</a></div>
+        {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <div class="menu" style="float: left;"><a href="/cosmos/logout/">Wyloguj</a></div>
+        {% endif %}
+    {% endblock %}
+    </div>
+
+</div></br>

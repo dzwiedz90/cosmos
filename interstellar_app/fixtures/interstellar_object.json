@@ -1,0 +1,515 @@
+[
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 1,
+    "fields": {
+     "name": "Galaktyka Andromedy",
+      "type": "galaktyka spiralna",
+      "constellation": "Andromeda",
+      "distance": "2.52 mln ly",
+      "apparent_magnitude": 3.44,
+      "size": "110 000 ly",
+      "messier_catalogue": "M31"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 2,
+    "fields": {
+      "name": "Galaktyka Wir",
+      "type": "galaktyka spiralna",
+      "constellation": "Psy Gończe",
+      "distance": "23.17 mln ly",
+      "apparent_magnitude": 8.96,
+      "size": "60 000 ly",
+      "messier_catalogue": "M51"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 3,
+    "fields": {
+      "name": "Galaktyka Trójkąta",
+      "type": "galaktyka",
+      "constellation": "Trójkąt",
+      "distance": "3 mln ly",
+      "apparent_magnitude": 5.7,
+      "size": "60 000 ly",
+      "messier_catalogue": "M33"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 4,
+    "fields": {
+      "name": "Mgławica Kraba",
+      "type": "mgławica",
+      "constellation": "Byk",
+      "distance": "6300 ly",
+      "apparent_magnitude": 8.4,
+      "size": "11 ly",
+      "messier_catalogue": "M1"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 5,
+    "fields": {
+      "name": "Gromada Motyl",
+      "type": "gromada otwarta",
+      "constellation": "Skorpion",
+      "distance": "1588 ly",
+      "apparent_magnitude": 4.2,
+      "size": "25 ly",
+      "messier_catalogue": "M6"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 6,
+    "fields": {
+      "name": "M3",
+      "type": "gromada kulista",
+      "constellation": "Psy Gończe",
+      "distance": "33 900 ly",
+      "apparent_magnitude": 6.2,
+      "size": "180 ly",
+      "messier_catalogue": "M3"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 7,
+    "fields": {
+      "name": "Gromada Ptolemeusza",
+      "type": "gromada otwarta",
+      "constellation": "Skorpion",
+      "distance": "800 ly",
+      "apparent_magnitude": 3.3,
+      "size": "20 ly",
+      "messier_catalogue": "M7"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 8,
+    "fields": {
+      "name": "Mgławica Laguna",
+      "type": "mgławica dyfuzyjna",
+      "constellation": "Strzelec",
+      "distance": "4.1 tys ly",
+      "apparent_magnitude": 5.8,
+      "size": "70 x 30 ly",
+      "messier_catalogue": "M8"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 9,
+    "fields": {
+      "name": "Mgławica Trójlistna Koniczyna",
+      "type": "mgławica emisyjna",
+      "constellation": "Strzelec",
+      "distance": "5000 ly",
+      "apparent_magnitude": 6.3,
+      "size": "?",
+      "messier_catalogue": "M20"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 10,
+    "fields": {
+      "name": "Mgławica Hantle",
+      "type": "mgławica planetarna",
+      "constellation": "Lisek",
+      "distance": "1.25 tys ly",
+      "apparent_magnitude": 7.5,
+      "size": "?",
+      "messier_catalogue": "M27"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 11,
+    "fields": {
+      "name": "M40",
+      "type": "gwiazda optycznie podwójna",
+      "constellation": "Wielka Niedźwiedzica",
+      "distance": "1034 ly",
+      "apparent_magnitude": 9,
+      "size": "n/a",
+      "messier_catalogue": "M40"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 12,
+    "fields": {
+      "name": "Wielka Mgławica w Orionie",
+      "type": "mgławica dyfuzyjna",
+      "constellation": "Orion",
+      "distance": "1345 ly",
+      "apparent_magnitude": 3,
+      "size": "28 × 26",
+      "messier_catalogue": "M42"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 13,
+    "fields": {
+      "name": "Żłóbek",
+      "type": "gromada otwarta",
+      "constellation": "Rak",
+      "distance": "577 ly",
+      "apparent_magnitude": 3.7,
+      "size": "16 ly",
+      "messier_catalogue": "M44"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 13,
+    "fields": {
+      "name": "Plejady",
+      "type": "gromada otwarta",
+      "constellation": "Byk",
+      "distance": "442 ly",
+      "apparent_magnitude": 1.4,
+      "size": "12 ly",
+      "messier_catalogue": "M45"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 14,
+    "fields": {
+      "name": "M49",
+      "type": "galaktyka eliptyczna",
+      "constellation": "Panna",
+      "distance": "60 mln ly",
+      "apparent_magnitude": 8.4,
+      "size": "157 tys ly",
+      "messier_catalogue": "M49"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 15,
+    "fields": {
+      "name": "M52",
+      "type": "gromada otwarta",
+      "constellation": "Kasjopeja",
+      "distance": "7000 ly",
+      "apparent_magnitude": 7.3,
+      "size": "11 - 26 ly",
+      "messier_catalogue": "M52"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 16,
+    "fields": {
+      "name": "Mgławica Pierścień",
+      "type": "mgławica planetarna",
+      "constellation": "Lutnia",
+      "distance": "2300 ly",
+      "apparent_magnitude": 8.8,
+      "size": "1.9 x 1.3 ly",
+      "messier_catalogue": "M57"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 17,
+    "fields": {
+      "name": "M61",
+      "type": "galaktyka spiralna z poprzeczką",
+      "constellation": "Panna",
+      "distance": "50 mln ly",
+      "apparent_magnitude": 9.7,
+      "size": "94 tys ly",
+      "messier_catalogue": "M61"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 18,
+    "fields": {
+      "name": "Galaktyka Słonecznik",
+      "type": "galaktyka spiralna",
+      "constellation": "Psy Gończe",
+      "distance": "37 mln ly",
+      "apparent_magnitude": 9.31,
+      "size": "136 × 77 tys ly",
+      "messier_catalogue": "M63"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 19,
+    "fields": {
+      "name": "Galaktyka Czarne Oko",
+      "type": "galaktyka spiralna",
+      "constellation": "Warkocz Bereniki",
+      "distance": "17 mln ly",
+      "apparent_magnitude": 8.5,
+      "size": "51 × 29 tys ly",
+      "messier_catalogue": "M64"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 20,
+    "fields": {
+      "name": "Galaktyka Bodego",
+      "type": "galaktyka spiralna",
+      "constellation": "Wielka Niedźwiedzica",
+      "distance": "11.77 mln ly",
+      "apparent_magnitude": 6.9,
+      "size": "84 × 46 tys ly",
+      "messier_catalogue": "M81"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 21,
+    "fields": {
+      "name": "Galaktyka Cygaro",
+      "type": "galaktyka spiralna z poprzeczką",
+      "constellation": "Wielka Niedźwiedzica",
+      "distance": "12 mln ly",
+      "apparent_magnitude": 8.4,
+      "size": "?",
+      "messier_catalogue": "M82"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 22,
+    "fields": {
+      "name": "Galaktyka Południowy Wiatraczek",
+      "type": "galaktyka spiralna z poprzeczką",
+      "constellation": "Hydra",
+      "distance": "14.7 mln ly",
+      "apparent_magnitude": 7.54,
+      "size": "40 tys ly",
+      "messier_catalogue": "M83"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 23,
+    "fields": {
+      "name": "M91",
+      "type": "galaktyka spiralna z poprzeczką",
+      "constellation": "Warkocz Bereniki",
+      "distance": "52 mln ly",
+      "apparent_magnitude": 10.19,
+      "size": "?",
+      "messier_catalogue": "M91"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 24,
+    "fields": {
+      "name": "M95",
+      "type": "galaktyka spiralna z poprzeczką",
+      "constellation": "Lew",
+      "distance": "38 mln ly",
+      "apparent_magnitude": 9.71,
+      "size": "?",
+      "messier_catalogue": "M95"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 25,
+    "fields": {
+      "name": "Galaktyka Wiatraczek",
+      "type": "galaktyka spiralna",
+      "constellation": "Weilka Niedźwiedzica",
+      "distance": "21 mln ly",
+      "apparent_magnitude": 7.9,
+      "size": "?",
+      "messier_catalogue": "M101"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 26,
+    "fields": {
+      "name": "Galaktyka Sombrero",
+      "type": "galaktyka spiralna",
+      "constellation": "Panna",
+      "distance": "29.35 mln ly",
+      "apparent_magnitude": 8.7,
+      "size": "?",
+      "messier_catalogue": "M104"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 27,
+    "fields": {
+      "name": "Arkturus",
+      "type": "gwiazda",
+      "constellation": "Wolarz (Bootes)",
+      "distance": "36.72 ly",
+      "apparent_magnitude": -0.31,
+      "size": "R 25.4 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 28,
+    "fields": {
+      "name": "Syriusz",
+      "type": "gwiazda",
+      "constellation": "Wielki Pies",
+      "distance": "8.601 ly",
+      "apparent_magnitude": -1.47,
+      "size": "R 1.75 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 29,
+    "fields": {
+      "name": "Regulus",
+      "type": "gwiazda",
+      "constellation": "Lew",
+      "distance": "79.30 ly",
+      "apparent_magnitude": -0.57,
+      "size": "R 4.3 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 30,
+    "fields": {
+      "name": "Wega",
+      "type": "gwiazda",
+      "constellation": "Lutnia",
+      "distance": "25.045 ly",
+      "apparent_magnitude": 0.03,
+      "size": "R 2.726 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 31,
+    "fields": {
+      "name": "Rigel",
+      "type": "gwiazda",
+      "constellation": "Orion",
+      "distance": "863 ly",
+      "apparent_magnitude": 0.18,
+      "size": "R 78.9 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 32,
+    "fields": {
+      "name": "Betelgeza",
+      "type": "gwiazda",
+      "constellation": "Orion",
+      "distance": "700 ly",
+      "apparent_magnitude": 0.45,
+      "size": "R 887 ± 203 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 33,
+    "fields": {
+      "name": "Aldebaran",
+      "type": "gwiazda",
+      "constellation": "Byk",
+      "distance": "66.6 ly",
+      "apparent_magnitude": 0.86,
+      "size": "R 44.2 R Sł"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 34,
+    "fields": {
+      "name": "Mira Ceti",
+      "type": "gwiazda zmienna",
+      "constellation": "Wieloryb",
+      "distance": "419 ly",
+      "apparent_magnitude": 2,
+      "size": "?",
+      "description": "Jasność zmienna 2.0 - 10.2"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 35,
+    "fields": {
+      "name": "Algol",
+      "type": "gwiazda zmienna ",
+      "constellation": "Perseusz",
+      "distance": "92.8 ly",
+      "apparent_magnitude": 2.1,
+      "size": "R 2.89 R Sł",
+      "description": "Jasność zmienna 2.1 - 3.4"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 36,
+    "fields": {
+      "name": "Sheliak (Beta Lyrae)",
+      "type": "gwiazda zmienna ",
+      "constellation": "Lutnia",
+      "distance": "959 ly",
+      "apparent_magnitude": 3.2,
+      "size": "R 6 R Sł",
+      "description": "Jasność zmienna 3.2 - 4.4"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 37,
+    "fields": {
+      "name": "Chi Cyg",
+      "type": "gwiazda zmienna ",
+      "constellation": "Łabędź (Cygnus)",
+      "distance": "553 ly",
+      "apparent_magnitude": 3.3,
+      "size": "R 348 - 480 R Sł",
+      "description": "Jasność zmienna 3,3 - 14,2"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 38,
+    "fields": {
+      "name": "Kastor",
+      "type": "gwiazda wielokrotna ",
+      "constellation": "Bliźnięta",
+      "distance": "50.9 ly",
+      "apparent_magnitude": 1.9,
+      "size": "?",
+      "description": "Alfa Gem - A - 1,9 mag. i B - 2,9 mag"
+    }
+  },
+  {
+    "model": "interstellar_app.InterstellarObject",
+    "pk": 38,
+    "fields": {
+      "name": "Mizar",
+      "type": "gwiazda wielokrotna ",
+      "constellation": "Wielka Niedźwiedzica",
+      "distance": "85.8 ly",
+      "apparent_magnitude": 2.2,
+      "size": "?",
+      "description": "Zeta UMa -  A - 2,2 mag. i B - 3,9 mag"
+    }
+  }
+]

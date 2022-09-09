@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="pl">
+    <head>
+        {% include "./head.html" %}
+    </head>
+
+    <body>
+        {% include "./menu.html" %}
+
+         <div id="content">
+            {% if data %}
+                <ul>
+                    <legend><h1>Obiekty głębokiego kosmosu</h1></legend>
+                    {% if data.get_class == 'InterstellarObject' %}
+                        <li>
+                            id: {{data.id}}</br>
+                            Nazwa: {{data.name}}</br>
+                            Typ: {{data.type}}</br>
+                            Gwiazdozbiór: {{data.constellation}}</br>
+                            Odległość: {{data.distance}}</br>
+                            Jasność: {{data.apparent_magnitude}}</br>
+                            Rozmiar: {{data.size}}</br>
+                            Katalog Messiera: {{data.messier_catalogue}}</br>
+                                {% if data.description %}
+                                Opis: {{data.description}}</br>
+                                {% endif %}
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{data.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{data.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="interstellar" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                        </li>
+                        </br></br>
+                    {% endif %}
+                </ul>
+            {% endif %}
+         </div>
+        <div id="photos">
+            {% if id %}
+                {% for file in files %}
+                    <a href="{% static path|add:file %}"><img src="{% static path|add:file %}" alt="deep_space_photo"></a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>

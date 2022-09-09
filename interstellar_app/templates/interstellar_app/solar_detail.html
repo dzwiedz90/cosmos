@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="pl">
+    <head>
+        {% include "./head.html" %}
+    </head>
+
+    <body>
+        {% include "./menu.html" %}
+
+         <div id="content">
+            {% if data %}
+                <ul>
+                    <legend><h1>Obiekty układu słonecznego</h1></legend>
+                        {% if data.get_class == 'SolarSystemObject' %}
+                            <li>
+                            id: {{data.id}}</br>
+                            Nazwa: {{data.name}}</br>
+                            Promień (km): {{data.radius}}</br>
+                            Aphelium (au): {{data.aphelion}}</br>
+                            Peryhelium (au): {{data.perihelion}}</br>
+                            Okres orbitalny (d): {{data.orbital_period}}</br>
+                            Prędkość orbitalna (km/s): {{data.orbital_speed}}</br>
+                            Okres obrotu (h): {{data.rotation_period}}</br>
+                            Jasnośc (mag): {{data.apparent_magnitude}}</br>
+                            Naturalne satelity: {{data.natural_satellites}}</br>
+                            <form action="/cosmos/parse_fav_and_plan/" method="POST">
+                                <input type="checkbox" id="favourite" name="favourite" value="{{data.id}}">
+                                <label for="favourite">Dodaj do ulubionych</label><br>
+                                <input type="checkbox" id="plan" name="plan" value="{{data.id}}">
+                                <label for="plan">Dodaj do planu obserwacji</label><br>
+                                <input type="checkbox" id="type" name="type" value="solar" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                {% csrf_token %}
+                                <button type="submit">Wyślij</button>
+                            </form>
+                            </li>
+                            </br></br>
+                        {% endif %}
+                </ul>
+            {% endif %}
+         </div>
+        <div id="photos">
+            {% if id %}
+                {% for file in files %}
+                    <a href="{% static path|add:file %}"><img src="{% static path|add:file %}" alt="planet_photo"></a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>

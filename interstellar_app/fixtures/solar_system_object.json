@@ -1,0 +1,152 @@
+[
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 1,
+    "fields": {
+      "name": "Jowisz",
+      "radius": 69911,
+      "aphelion": 5.369,
+      "perihelion": 5.034,
+      "orbital_period": 4332.589,
+      "orbital_speed": 13.06,
+      "rotation_period": 9.9250,
+      "apparent_magnitude": -2.95,
+      "natural_satellites": 79
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 2,
+    "fields":{
+     "name": "Saturn",
+      "radius": 60268,
+      "aphelion": 9.957,
+      "perihelion": 9.195,
+      "orbital_period": 10759.22,
+      "orbital_speed": 9.68,
+      "rotation_period": 10.656,
+      "apparent_magnitude": -0.2,
+      "natural_satellites": 82
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 3,
+    "fields":{
+     "name": "Mars",
+      "radius": 3389.5,
+      "aphelion": 1.6660,
+      "perihelion": 1.3814,
+      "orbital_period": 686.980,
+      "orbital_speed": 24.07,
+      "rotation_period": 24.6229,
+      "apparent_magnitude": -2.91,
+      "natural_satellites": 2
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 4,
+    "fields":{
+     "name": "Wenus",
+      "radius": 6051.8,
+      "aphelion": 0.72823128,
+      "perihelion": 0.71843270,
+      "orbital_period": 224.701,
+      "orbital_speed": 35.020,
+      "rotation_period": -5832.6,
+      "apparent_magnitude": -4.7,
+      "natural_satellites": 0
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 5,
+    "fields":{
+     "name": "Uran",
+      "radius": 25362,
+      "aphelion": 19.748,
+      "perihelion": 18.637,
+      "orbital_period": 30685.4,
+      "orbital_speed": 6.80,
+      "rotation_period": -17.24,
+      "apparent_magnitude": 5.5,
+      "natural_satellites": 27
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 6,
+    "fields":{
+     "name": "Neptun",
+      "radius": 24622,
+      "aphelion": 30.216,
+      "perihelion": 29.886,
+      "orbital_period": 60189,
+      "orbital_speed": 5.43,
+      "rotation_period": 16.11,
+      "apparent_magnitude": 7.5,
+      "natural_satellites": 14
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 7,
+    "fields":{
+     "name": "Merkury",
+      "radius": 2439.7,
+      "aphelion": 0.4667,
+      "perihelion": 0.3075,
+      "orbital_period": 87.969,
+      "orbital_speed": 47.36,
+      "rotation_period": 58.65,
+      "apparent_magnitude": -1.8,
+      "natural_satellites": 0
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 8,
+    "fields":{
+     "name": "Ceres",
+      "radius": 469.7,
+      "aphelion": 2.984174,
+      "perihelion": 2.549064,
+      "orbital_period": 1679.8,
+      "orbital_speed": 5.5120,
+      "rotation_period": 9.07417,
+      "apparent_magnitude": 6.7,
+      "natural_satellites": 0
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 9,
+    "fields":{
+     "name": "Westa",
+      "radius": 286.3,
+      "aphelion": 2.5708,
+      "perihelion": 2.1532,
+      "orbital_period": 1325.18,
+      "orbital_speed": 19.34,
+      "rotation_period": 5.4,
+      "apparent_magnitude": 5.1,
+      "natural_satellites": 0
+    }
+  },
+  {
+    "model": "interstellar_app.SolarSystemObject",
+    "pk": 10,
+    "fields":{
+     "name": "Pluton",
+      "radius": 1188,
+      "aphelion": 49.3161,
+      "perihelion": 29.5740,
+      "orbital_period": 90426,
+      "orbital_speed": 4.67,
+      "rotation_period": 153.2935,
+      "apparent_magnitude": 13.65,
+      "natural_satellites": 5
+    }
+  }
+]

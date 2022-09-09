@@ -1,0 +1,43 @@
+generalnie spoko, ale polecam jak już chcesz robić jakiś front to sobie obczaj np https://semantic-ui.com/ - gotowe style które sprawią, że apka wygląda spoko
+Filip
+zamiast samemu rzeźbić
+Filip
+Filip Waligórski
+te checkboxy bym zamienił na jakąś ikonkę
+Wysłano
+Obadam
+Filip
+i jak klikasz ikonke to od razu sie wysyła do backu i wraca na tę samą stronę a ikonka się zmienia np na inny kolor albo na cokolwiek co można znów kliknąć i np wywalić z ulubionych
+Filip
+jakieś serduszko czy coś
+Filip
+ten semantic to wystarczy do base templatki dodać jako skrypt
+Filip
+Filip Waligórski
+nie musisz do django doinstalowywać
+Wysłano
+Tego htmlem to ja nie zrobię panie
+Filip
+Filip Waligórski
+dasz rade, to easy jest
+Wysłano
+Do tego trzeba mojego największego wroga
+Wysłano
+JSa
+Filip
+tu masz np ikony https://semantic-ui.com/elements/icon.html
+Filip
+klikasz, wysyła się do BE i jak odświeża stronę to renderując tę ikonę dajesz ifa - jesli jest w ulubionych to zmieniasz ikone na jakąś inną
+Filip
+i akcję podpiętą pod nią
+Filip
+no wlasnie nie trzeba jsa
+Filip
+robisz form, który ma tylko 1 button, który jest ikoną
+Filip
+zrób, żeby mozna było miec wiele planów obserwacji, a żeby sie dodawało np zawsze do najnowszego
+Filip
+i jak już np go wykorzystasz to tworzysz sobie nowy
+Filip
+Filip Waligórski
+i jakieś tam np dodanie opisu, miejsca (np z integracją z openstreetmap, żeby pokazało po koordynatach gdzie to jest)

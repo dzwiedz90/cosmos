@@ -1,0 +1,92 @@
+[
+  {
+    "model": "interstellar_app.MoonObject",
+    "pk": 1,
+    "fields": {
+      "name": "Io",
+      "diameter": 3642.6,
+      "apoapsis": 423500,
+      "periapsis": 420100,
+      "orbital_period": 1.769,
+      "orbital_speed": 17.34,
+      "rotation_period": "synchroniczny",
+      "apparent_magnitude": 5.02,
+      "satellite_of": 1
+    }
+  },
+  {
+    "model": "interstellar_app.MoonObject",
+    "pk": 2,
+    "fields": {
+      "name": "Ganimedes",
+      "diameter": 5268.2,
+      "apoapsis": 1071800,
+      "periapsis": 1069000,
+      "orbital_period": 7.155,
+      "orbital_speed": 10.88,
+      "rotation_period": "synchroniczny",
+      "apparent_magnitude": 4.5,
+      "satellite_of": 1
+    }
+  },
+  {
+    "model": "interstellar_app.MoonObject",
+    "pk": 3,
+    "fields": {
+      "name": "Kallisto",
+      "diameter": 4820.6,
+      "apoapsis": 1897000,
+      "periapsis": 1869000,
+      "orbital_period": 16.689,
+      "orbital_speed": 8.204,
+      "rotation_period": "synchroniczy",
+      "apparent_magnitude": 5.7,
+      "satellite_of": 1
+    }
+  },
+  {
+    "model": "interstellar_app.MoonObject",
+    "pk": 4,
+    "fields": {
+      "name": "Europa",
+      "diameter": 3122,
+      "apoapsis": 677400,
+      "periapsis": 664800,
+      "orbital_period": 3.551,
+      "orbital_speed": 13.74,
+      "rotation_period": "synchroniczy",
+      "apparent_magnitude": 5.02,
+      "satellite_of": 1
+    }
+  },
+  {
+    "model": "interstellar_app.MoonObject",
+    "pk": 5,
+    "fields": {
+      "name": "Tytan",
+      "diameter": 5150,
+      "apoapsis": 1257060,
+      "periapsis": 1186680,
+      "orbital_period": 15.945,
+      "orbital_speed": 5.57,
+      "rotation_period": "synchroniczy",
+      "apparent_magnitude": 8.4,
+      "satellite_of": 2
+    }
+  },
+  {
+    "model": "interstellar_app.MoonObject",
+    "pk": 6,
+    "fields": {
+      "name": "Rea",
+      "diameter": 1528,
+      "apoapsis": 527170,
+      "periapsis": 526960,
+      "orbital_period": 4.518,
+      "orbital_speed": 8.48,
+      "rotation_period": "synchroniczy",
+      "apparent_magnitude": 9,
+      "satellite_of": 2
+    }
+  }
+]

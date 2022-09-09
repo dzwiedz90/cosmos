@@ -1,0 +1,55 @@
+body
+{
+    background-color: #620101;
+}
+
+ul
+{
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #7c0804;
+}
+
+.menu
+{
+    border: 1px solid black;
+    margin-left: 5px;
+    padding: 5px;
+    background-color: pink;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#menu
+{
+    margin-top: -5px;
+    padding-top: 10px;
+    height: 45px;
+    background-color: #99170f;
+}
+
+#context
+{
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #7c0804;
+    padding: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#inside_content
+{
+    background-color: #7c0804;
+}
+
+img
+{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}

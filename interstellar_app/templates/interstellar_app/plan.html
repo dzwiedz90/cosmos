@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="pl">
+    <head>
+        {% include "./head.html" %}
+    </head>
+
+    <body>
+        {% include "./menu.html" %}
+
+        <div id="content">
+            <h1>{{ user.username }}</h1>
+            {% if data %}
+                <ul>
+                    <legend><h1>Plan obserwacji</h1></legend>
+                    {% for object in data %}
+                        <li>
+                            {% if object.interstellar %}
+                                Obiekt: <a href="{% url 'interstellar_app:interstellar_detail' object.interstellar.id %}">{{object.interstellar.name}}</a><br>
+                                <form action="/cosmos/delete/" method="POST">
+                                    <input type="checkbox" id="plan" name="plan" value="{{object.id}}" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                    {% csrf_token %}
+                                    <button type="submit">Usuń</button>
+                                </form><br>
+                            {% endif %}
+                            {% if object.solar %}
+                                Obiekt: <a href="{% url 'interstellar_app:solar_system_detail' object.solar.id %}">{{object.solar.name}}</a><br>
+                                <form action="/cosmos/delete/" method="POST">
+                                    <input type="checkbox" id="plan" name="plan" value="{{object.id}}" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                    {% csrf_token %}
+                                    <button type="submit">Usuń</button>
+                                </form><br>
+                            {% endif %}
+                            {% if object.moon %}
+                                Obiekt: {{object.moon.name}}<br><br>
+                                Obiekt: <a href="{% url 'interstellar_app:moons_detail' object.moon.id %}">{{object.moon.name}}</a><br>
+                                <form action="/cosmos/delete/" method="POST">
+                                    <input type="checkbox" id="plan" name="plan" value="{{object.id}}" checked="checked" style="opacity:0; position:absolute; left:9999px;">
+                                    {% csrf_token %}
+                                    <button type="submit">Usuń</button>
+                                </form><br>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </body>
+</html>

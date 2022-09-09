@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="pl">
+    <head>
+        {% include "./head.html" %}
+    </head>
+
+    <body>
+        {% include "./menu.html" %}
+
+         <div id="content">
+            {% block content %}
+                {% if user.is_authenticated %}
+                <h1>Hi {{ user.username }}!</h1> Jesteś zalgowany</br>
+                Tu możesz się wylogować, rób to za każdym razem:</br>
+                <div class="menu" style="float: left; margin-left: 250px;"><a href="/cosmos/logout/">Wyloguj</a></div>
+                {% endif %}
+            {% endblock %}
+         </div>
+    </body>
+</html>

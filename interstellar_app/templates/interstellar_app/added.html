@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="pl">
+    <head>
+        {% include "./head.html" %}
+    </head>
+
+    <body>
+        {% include "./menu.html" %}
+
+         <div id="content">
+            {% if data == 'added' %}
+                Wartość dodana!
+             {% elif data == 'exists' %}
+                Obiekt juz w ulubionych!
+             {% endif %}
+        </div>
+    </body>
+</html>
